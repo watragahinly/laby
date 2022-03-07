@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std;
+struct counts {
+	int count1;
+	int count2;
+};
+
+counts srav(double **a, int n, int b) {
+	counts rez1;
+	rez1.count1 = 0;
+	rez1.count2 = 0;
+	for (int i = 0;i < n;i++) {
+		for (int j = 0;j < b;j++) {
+			if (a[i][j] == 0 && j < (b / 2)) {
+				rez1.count1 += 1;
+			}
+			else {
+				if (a[i][j] == 0 && j >( b / 2)) {
+					rez1.count2 += 1;
+				}
+
+			}
+		}
+	}
+	return rez1;
+}
+
+double** array_generator(unsigned int dim1, unsigned int dim2) {
+	double** ptrary = new double* [dim1];
+	for (int i = 0; i < dim1; i++) {
+		ptrary[i] = new double[dim2];
+	}
+	return ptrary;
+}
+
+int main()
+{
+	const int N(10);
+	double **a;
+	int n, b;
+	cout << "Number of lines\n";
+	cin >> n;
+	cout << "Number of columns\n";
+	cin >> b;
+
+	a = array_generator(n, b);
+
+	for (int i = 0;i < n;i++) {
+		for (int j = 0;j < b;j++) {
+			cout << "Write A" << i + 1 << j + 1 << endl;
+			cin >> a[i][j];
+		}
+	}
+	for (int i = 0;i < n;i++) {
+		for (int j = 0;j < b;j++) {
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
+	counts result = srav(a, n,b);
+	if (srav(rez1.count1) > rez1.count2) {
+		cout << "Left\n";
+	}
+	else {
+		if (count1 < count2) {
+			cout << "Right\n";
+		}
+		else {
+			cout << "Equal\n";
+		}
+	}
+	cout << count1 << " " << count2;
+	return 0;
+}

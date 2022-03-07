@@ -1,0 +1,44 @@
+#include iostream
+#include stdlib.h
+using namespace std;
+int main()
+{
+	double k,k1;
+	cout  Write rangen;
+	cin  k;
+	double x = new double[k];
+	double y = new double[k];
+	double N1 = new double[k];
+	double N2 = new double[k];
+	int numberOfPoints;
+	numberOfPoints = 0;
+	int j = 0;
+	for (int i = 0; i  k; i++)
+	{
+		cout  write x  i + 1  endl;
+		cin  x[i];
+		cout  write y  i + 1  endl;
+		cin  y[i];
+		cout  x  i + 1  =  x[i]     y  i + 1  =  y[i]  endl;
+		if ((x[i]  y[i] = 0)
+			&& !((((x[i] - 1)  (x[i] - 1)) + (y[i]  y[i])) = 1)
+			&& !((((x[i] + 1)  (x[i] + 1)) + (y[i]  y[i])) = 1)
+			&& ((x[i]  x[i] + y[i]  y[i]) = 4))
+		{
+			numberOfPoints++;
+			N1[j]=x[i];
+			N2[j]=y[i];
+			j++;
+		}
+	}
+	cout  Number of right points  numberOfPoints  endl;
+	for (int i = 0; i  j; i++)
+	{
+		cout  x  i + 1  =  N1[i]     x  i + 1  =  N2[i]  endl;
+	}
+	delete[] x;
+	delete[] y;
+	delete[] N1;
+	delete[] N2;
+	return 0;
+}
